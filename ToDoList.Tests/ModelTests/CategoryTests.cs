@@ -13,8 +13,40 @@ namespace ToDoList.Tests
     [TestMethod]
     public void CategoryConstructor_CreatesInstanceOfCategory_Category()
     {
+      //Arrange
       Category newCategory = new Category("Test Category");
+
+      //Assert
       Assert.AreEqual(typeof(Category), newCategory.GetType());
+    }
+
+
+    [TestMethod]
+    public void GetName_ReturnName_String()
+    {
+      //Arrange
+      string name = "Test Category";
+      Category newCategory = new Category(name);
+
+      //Act
+      string result = newCategory.Name;
+
+      //Assert
+      Assert.AreEqual(name, result);
+    }
+
+    [TestMethod]
+    public void GetId_ReturnsCategoryId_Int()
+    {
+      //Arrange
+      string name = "Test Category";
+      Category newCategory = new Category(name);
+
+      //Act
+      int result = newCategory.Id;
+
+      //Assert
+      Assert.AreEqual(3, result);
     }
   }
 }
